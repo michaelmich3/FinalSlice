@@ -6069,10 +6069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d37369828613a46b0231f76191e822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionDuration: 2
-  mainTarget: {fileID: 1365992752}
-  leftTarget: {fileID: 1372568611}
-  rightTarget: {fileID: 898173820}
+  travelTime: 0.5
+  CurrentTarget: {fileID: 0}
 --- !u!1 &574179437
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,7 +8409,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1862198
+  m_Name: pb_Mesh13092
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9241,7 +9239,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11924
+  m_Name: pb_Mesh13202
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16818,7 +16816,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1976874
+  m_Name: pb_Mesh13114
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -17303,6 +17301,7 @@ GameObject:
   - component: {fileID: 1423956742}
   - component: {fileID: 1423956741}
   - component: {fileID: 1423956740}
+  - component: {fileID: 1423956745}
   m_Layer: 0
   m_Name: LeftTrigger
   m_TagString: Untagged
@@ -17676,6 +17675,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 2
+--- !u!114 &1423956745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423956738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bb4d36a6065446b91f74439fbf2ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 550247445}
+  newTarget: {fileID: 1372568611}
 --- !u!43 &1427529127
 Mesh:
   m_ObjectHideFlags: 0
@@ -19103,7 +19115,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1957836
+  m_Name: pb_Mesh12962
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -19778,6 +19790,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!1 &1612847198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1612847200}
+  - component: {fileID: 1612847199}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1612847199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612847198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e609307e97b4576a12ecb98336e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels:
+  - Level1
+  - Level2
+  - Level3
+  - Level4
+  - Level5
+  - Level6
+--- !u!4 &1612847200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612847198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5164156, y: 0.012449145, z: 0.85738087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626364290
 GameObject:
   m_ObjectHideFlags: 0
@@ -21424,6 +21483,7 @@ GameObject:
   - component: {fileID: 1697109237}
   - component: {fileID: 1697109236}
   - component: {fileID: 1697109235}
+  - component: {fileID: 1697109241}
   m_Layer: 0
   m_Name: MiddleTrigger
   m_TagString: Untagged
@@ -21797,6 +21857,19 @@ Transform:
   m_Father: {fileID: 1406828500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697109241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697109234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bb4d36a6065446b91f74439fbf2ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 550247445}
+  newTarget: {fileID: 1365992752}
 --- !u!43 &1698410680
 Mesh:
   m_ObjectHideFlags: 0
@@ -22330,6 +22403,7 @@ GameObject:
   - component: {fileID: 1756911091}
   - component: {fileID: 1756911090}
   - component: {fileID: 1756911089}
+  - component: {fileID: 1756911094}
   m_Layer: 0
   m_Name: RightTrigger
   m_TagString: Untagged
@@ -22703,6 +22777,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 2
+--- !u!114 &1756911094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756911087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bb4d36a6065446b91f74439fbf2ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 550247445}
+  newTarget: {fileID: 898173820}
 --- !u!1 &1800655459
 GameObject:
   m_ObjectHideFlags: 0
