@@ -9,7 +9,7 @@ public class RoomSelect : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player")
+		if (other.gameObject.tag == "Player1")
 		{
 			unloadRoom.SetActive(false);
 			loadRoom.SetActive(true);

@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private float travelTime = 1f;
-
-    [HideInInspector] public Transform CurrentTarget;
+    public Transform CurrentTarget;
+    
     private Vector3 velocity = Vector3.zero;
 
     void Update()

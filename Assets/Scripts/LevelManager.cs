@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+	[SerializeField] private string menuLevel;
 	[SerializeField] private string[] Levels;
 
 	private int random;
 	private string sceneName;
 
-	private void LoadLevel()
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
+    private void LoadLevel() //Use this when player wins round
 	{
 		random = Random.Range(0, Levels.Length);
 		sceneName = SceneManager.GetActiveScene().name;
