@@ -1,0 +1,42 @@
+MENU
+
+On start game
+	Disable: Main Camer > Move To Target
+	Enable: Canvas
+	Enable: Game Manager > Start Countdown
+
+Door Triggers
+	Exit: On trigger stay, if press X, exit game
+	Level X (1-6): On trigger stay, if press X, start level
+	Start: On trigger stay, if press X, start random level
+
+
+
+GAME
+
+Load next level
+	When pizza taken
+	When all but one players dead
+
+Pick up items
+	If player has no item, if player touches it, they pick it up
+
+Melee attack
+	When player melee attacks, show attack particle
+		If enemy in melee attack trigger, enemy takes 1 damage
+
+Weapon attack
+	If player has melee weapon (Anchovy), play attack animatin
+		If weapon touches enemy when animation is being played, enemy takes 2 damage
+	If player has ranged weapon (Pepper), spawn weapon and move towards facing location (whike playing the animation)
+		If weapon touches enemy, enemy takes 1 damage
+
+Health
+	Players start with 10 health points
+	Use for loop to change the life text to Life + I for "health points" amount of times
+
+Pause menu
+	Pause when Start pressed
+	Unpause when Start or B pressed
+	Return to Main Menu when A pressed
+		Destroy all "Dont Destroy On Load" gameobjects

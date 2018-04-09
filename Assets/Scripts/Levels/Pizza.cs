@@ -34,14 +34,12 @@ public class Pizza : MonoBehaviour
 
 	private void PizzaTimer()
 	{
-		//Update the pizza timer UI
-		timerText.text = "Pizza Time! in: " + pizzaTime.ToString("F2");
-
 		//Count down time from level start
 		if (pizzaTime > 0)
 		{
 			pizzaTime -= Time.deltaTime;
-		}
+            timerText.text = "Pizza Time! in: " + pizzaTime.ToString("F1"); //Update the pizza timer UI
+        }
 		else if(pizzaTime <= 0)
          {
 			if (!isActivated)
@@ -49,8 +47,9 @@ public class Pizza : MonoBehaviour
 				//Open pizza slice location when timer is done
 				isActivated = true;
 				pizzaTime = 0;
-				
-				animator.SetBool("IsActivated", true);
+
+                timerText.text = "PIZZA TIME!"; //Update the pizza timer UI
+                animator.SetBool("IsActivated", true);
 			}
          }
 	}

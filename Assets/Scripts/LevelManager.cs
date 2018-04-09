@@ -6,26 +6,28 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 	[SerializeField] private string menuLevel;
-	[SerializeField] private string[] Levels;
+	[SerializeField] private string[] levels;
 
 	private int random;
 	private string sceneName;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
 
-    private void LoadLevel() //Use this when player wins round
+
+    public void LoadRandomLevel() //Use this when player wins round on random mode
 	{
-		random = Random.Range(0, Levels.Length);
+		random = Random.Range(0, levels.Length);
 		sceneName = SceneManager.GetActiveScene().name;
 
-		while (Levels[random] == sceneName)
+		while (levels[random] == sceneName)
 		{
-			random = Random.Range(0, Levels.Length);
+			random = Random.Range(0, levels.Length);
 		}
 
-		SceneManager.LoadScene(Levels[random]);
+		SceneManager.LoadScene(levels[random]);
 	}
+
+    public void LoadSameLevel(int levelNumber) //Use this when player wins round on specific level mode
+    {
+        SceneManager.LoadScene(levels[levelNumber]);
+    }
 }

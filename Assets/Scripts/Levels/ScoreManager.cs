@@ -24,7 +24,6 @@ public class ScoreManager : MonoBehaviour
 
 	private void Awake()
 	{
-		DontDestroyOnLoad(transform.gameObject);
 		text1 = player1ScoreText.GetComponent<Text>();
 		text2 = player2ScoreText.GetComponent<Text>();
 		text3 = player3ScoreText.GetComponent<Text>();

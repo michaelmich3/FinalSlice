@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartCountdown : MonoBehaviour
 {
@@ -9,19 +10,20 @@ public class StartCountdown : MonoBehaviour
 	[SerializeField] private Text startCountdownText;
 	[SerializeField] private GameObject levelUI;
 
-	private bool gameStarted = false;
+    private bool gameStarted;
 
 
 
-	void Awake()
+	private void Start()
 	{
-		levelUI.SetActive(false);
+        gameStarted = false;
+        levelUI.SetActive(false);
 		Time.timeScale = 0;
 	}
 	
-	void Update()
+	private void Update()
 	{
-		CountdownTimer();
+        CountdownTimer();
 	}
 
 

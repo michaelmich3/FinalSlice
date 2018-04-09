@@ -7,18 +7,18 @@ public class ChangeCameraTarget : MonoBehaviour
 	[SerializeField] private GameObject camera;
 	[SerializeField] private Transform newTarget;
 
-	private CameraMovement cameraMovement;
+	private MoveToTarget moveToTarget;
 
 	private void Awake()
 	{
-		cameraMovement = camera.GetComponent<CameraMovement>();
+		moveToTarget = camera.GetComponent<MoveToTarget>();
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player1")
 		{
-			cameraMovement.CurrentTarget = newTarget;
+			moveToTarget.CurrentTarget = newTarget;
 		}
 	}
 }

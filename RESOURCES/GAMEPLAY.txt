@@ -1,0 +1,25 @@
+GAMEPLAY MECHANICS
+
+JOIN & SPAWN MECHANICS
+//Players join by clicking Start
+If any of the in-game players hits Start, the game pauses
+
+PLAYER MECHANICS
+//Players can Move
+//Players can Jump
+Players can Dash
+Players can Melee attack
+Players can use a Weapon attack if they have a weapon equiped
+Players can only have 1 weapon equiped
+If a player picks up a new weapon, they drop the old one
+If a weapon runs out of ammo, it is automatically dropped and its collider becomes a trigger
+	(when the trigger falls out of the screen, it gets destroyed)
+
+ROUND MECHANICS
+If all but one players die, the living player wins the round
+//If the pizza timer runs out, the gates to the pizza slice open
+The first player that touches the pizza slice, wins the round
+New rounds are chosen randomly
+Game keeps going until players decide to return to the menu
+
+If players return to menu, all player prefabs despawn, except from player 1
