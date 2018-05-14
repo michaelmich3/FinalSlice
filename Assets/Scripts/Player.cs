@@ -34,15 +34,24 @@ public class Player : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
-        textMesh = lifeUI.GetComponent<TextMesh>();
-        animator = attackChildobject.GetComponent<Animator>();
+        if (lifeUI != null)
+        {
+            textMesh = lifeUI.GetComponent<TextMesh>();
+        }
+        if (attackChildobject != null)
+        {
+            animator = attackChildobject.GetComponent<Animator>();
+        }
     }
 
     private void Start()
     {
         gameObject.tag = "Player" + playerNumber;
         distToGround = collider.bounds.extents.y;
-        UpdateLife();
+        if (lifeUI != null)
+        {
+            UpdateLife();
+        }
     }
 
     private void Update()
